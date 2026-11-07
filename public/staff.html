@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Staff Dashboard | Sathvika Restaurant</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="/">Sathvika Restaurant</a><nav><a href="/">Home</a><a href="staff.html">Staff dashboard</a></nav></header>
+<main class="staff-main">
+  <section id="loginPanel" class="booking-card login-card"><p class="eyebrow">STAFF AREA</p><h1>Staff login</h1><div id="staffMessage" class="message hidden"></div>
+    <form id="staffLogin" class="form-grid"><label>Username<input name="username" required></label><label>Password<input type="password" name="password" required></label><button class="primary full">Login to dashboard</button></form>
+    <p class="muted">Demo login: staff / admin123</p>
+  </section>
+  <section id="dashboard" class="hidden">
+    <div class="dashboard-title"><div><p class="eyebrow">SATHVIKA RESTAURANT</p><h1>Reservation dashboard</h1></div><button id="logout" class="secondary">Logout</button></div>
+    <div id="dashboardMessage" class="message hidden"></div>
+    <section class="booking-card"><h2>Customer reservations</h2><div class="table-scroll"><table><thead><tr><th>ID</th><th>Customer</th><th>Contact</th><th>Table</th><th>Date / Time</th><th>Guests</th><th>Status</th><th>Update</th></tr></thead><tbody id="reservationsBody"></tbody></table></div></section>
+    <section class="booking-card"><h2>Table availability</h2><div class="table-scroll"><table><thead><tr><th>Table</th><th>Seats</th><th>Location</th><th>Status</th><th>Update</th></tr></thead><tbody id="tablesBody"></tbody></table></div></section>
+  </section>
+</main>
+<footer>Staff management · Sathvika Restaurant</footer><script src="staff.js"></script>
+</body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sathvika Restaurant | Table Reservation</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/">Sathvika Restaurant</a><nav><a href="/">Home</a><a href="#booking">Book a Table</a><a href="staff.html">Staff Login</a></nav></header>
+<main>
+  <section class="hero"><div class="hero-content"><p class="eyebrow">WELCOME TO</p><h1>Sathvika Restaurant</h1><p>Good food, warm hospitality and a table waiting for you.</p><button class="primary" id="startBooking">Reserve Your Table</button></div></section>
+  <section class="features"><article><h3>Easy reservation</h3><p>Choose your preferred date, time and table in a few simple steps.</p></article><article><h3>Availability check</h3><p>We check the selected table before saving your reservation.</p></article><article><h3>Quick confirmation</h3><p>Get your reservation number immediately after booking.</p></article></section>
+  <section id="booking" class="booking-section">
+    <div class="section-heading"><p class="eyebrow">ONLINE RESERVATION</p><h2>Book your table</h2></div>
+    <div class="steps"><span class="step active" data-step="1">1. Customer</span><span class="step" data-step="2">2. Select table</span><span class="step" data-step="3">3. Confirm</span></div>
+    <div id="message" class="message hidden" role="status"></div>
+    <section class="booking-card" id="page1">
+      <h3>Customer details</h3><p class="muted">Page 1 of 3 — Tell us how to contact you.</p>
+      <form id="customerForm" class="form-grid">
+        <label>Full name<input name="name" required maxlength="100" placeholder="Enter your name"></label>
+        <label>Email address<input type="email" name="email" required maxlength="150" placeholder="name@example.com"></label>
+        <label>Password<input type="password" name="password" required minlength="6" placeholder="Minimum 6 characters"></label>
+        <label>Phone number<input name="phone_number" required maxlength="20" placeholder="Enter phone number"></label>
+        <button class="primary full" type="submit">Continue to table selection →</button>
+      </form>
+    </section>
+    <section class="booking-card hidden" id="page2">
+      <h3>Select date, time and table</h3><p class="muted">Page 2 of 3 — Available tables are fetched from the database.</p>
+      <form id="reservationForm" class="form-grid">
+        <label>Reservation date<input type="date" id="reservationDate" required></label>
+        <label>Reservation time<input type="time" id="reservationTime" required></label>
+        <label>Number of guests<input type="number" id="guests" min="1" max="20" value="2" required></label>
+        <div class="full"><p class="label-title">Available tables</p><div id="tablesList" class="table-list"><p>Loading tables…</p></div></div>
+        <div class="full actions"><button class="secondary" type="button" id="backTo1">← Back</button><button class="primary" type="submit">Review reservation →</button></div>
+      </form>
+    </section>
+    <section class="booking-card hidden" id="page3">
+      <h3>Confirm your reservation</h3><p class="muted">Page 3 of 3 — Check your details before booking.</p>
+      <div id="bookingSummary" class="summary"></div>
+      <div class="actions"><button class="secondary" id="backTo2" type="button">← Change details</button><button class="primary" id="confirmBooking" type="button">Confirm booking</button></div>
+    </section>
+    <section class="booking-card hidden" id="successPage">
+      <div class="success-icon">✓</div><h2>Reservation is successful!</h2><p id="successText">Your booking has been saved.</p><button class="primary" id="newBooking">Make another reservation</button>
+    </section>
+  </section>
+</main>
+<footer>© Sathvika Restaurant · Table Reservation Management System</footer>
+<script src="app.js"></script>
+</body></html>
